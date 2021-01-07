@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  makola-aws-lambda-starter - Starter Sample App for Makola
+
+Globals:
+  Function:
+    Timeout: 20
+    Runtime: java11
+    MemorySize: 512
+
+Resources:
+#  LocationsTable:
+#    Type: AWS::Serverless::SimpleTable
+#    Properties:
+#      TableName: LocationsTable
+#      PrimaryKey:
+#        Name: locationName
+#        Type: String
+
+  WeatherEventLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: makola-api-starter/target/lambda.jar
+      Handler: africa.makola.WeatherEventLambda::handleRequest
+      Environment:
+        Variables:
+          PARAM1: VALUE
+      Policies:
+        - AmazonDynamoDBFullAccess
+      Events:
+        ApiEvents:
+          Type: Api
+          Properties:
+            Path: /events
+            Method: post
+
+  WeatherQueryLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: makola-api-starter/target/lambda.jar
+      Handler: africa.makola.WeatherQueryLambda::handleRequest
+      Policies:
+        - AmazonDynamoDBReadOnlyAccess
+      Events:
+        ApiEvents:
+          Type: Api
+          Properties:
+            Path: /locations
+            Method: get
+
