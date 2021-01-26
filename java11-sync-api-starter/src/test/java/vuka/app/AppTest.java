@@ -1,9 +1,10 @@
-package africa.makola;
+package vuka.app;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import africa.handler.HelloMakolaLambda;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import org.junit.Test;
 

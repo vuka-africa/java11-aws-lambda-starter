@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>africa.makola</groupId>
-	<artifactId>makola-aws-lambda-starter</artifactId>
+	<groupId>africa</groupId>
+	<artifactId>java11-aws-lambda-starter</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>makola-api-starter</module>
+		<module>java11-sync-api-starter</module>
 	</modules>
 
 	<build>

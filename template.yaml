@@ -22,7 +22,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: makola-api-starter/target/lambda.jar
-      Handler: africa.makola.WeatherEventLambda::handleRequest
+      Handler: africa.handler.WeatherEventLambda::handleRequest
       Environment:
         Variables:
           PARAM1: VALUE
@@ -39,7 +39,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: makola-api-starter/target/lambda.jar
-      Handler: africa.makola.WeatherQueryLambda::handleRequest
+      Handler: africa.handler.WeatherQueryLambda::handleRequest
       Policies:
         - AmazonDynamoDBReadOnlyAccess
       Events:

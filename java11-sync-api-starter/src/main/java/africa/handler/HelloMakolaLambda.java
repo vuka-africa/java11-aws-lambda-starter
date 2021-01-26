@@ -1,4 +1,4 @@
-package africa.makola;
+package africa.handler;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;

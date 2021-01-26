@@ -1,4 +1,4 @@
-package africa.makola;
+package africa.model;
 
 public class WeatherEvent {
   public String locationName;
